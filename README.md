@@ -18,7 +18,7 @@ An application that let users keep track of kegs.
 A react sing page application that acts as a front end for a keg inventory site. 
 
 ## Component Tree
-
+![Component Tree](https://github.com/jfox25/tap-room/ComponentTree.png)
 ## Project Requirements
 
 1. Node
