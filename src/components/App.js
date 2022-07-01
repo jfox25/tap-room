@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './Header';
-import KegList from './KegList';
+import KegControl from './KegControl';
 
 function App() {
   return (
     <div>
       <Header />
-      <KegList />
+      <KegControl />
     </div>
   );
 }
