@@ -37,18 +37,18 @@ class KegControl extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
   handleSellingPint= (id) => {
-    let selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
-
-    if(selectedKeg.pints === 0){
-        alert("Keg is sold out!")
-    }else 
-    {
-        selectedKeg.pints--;
+    const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+    const dupeArray = this.state.mainKegList;
+    var index = dupeArray.indexOf(selectedKeg);
+    if (index !== -1) {
+        if(dupeArray[index].pints === 0){
+            alert("Keg is sold out!")
+        }else 
+        {
+            dupeArray[index].pints--;
+        }
     }
-    const editedMainKegList = this.state.mainKegList
-    .filter(keg => keg.id !== id)
-    .concat(selectedKeg);
-    this.setState({mainKegList: editedMainKegList});
+    this.setState({mainKegList: dupeArray});
   }
   render(){
     let currentlyVisibleState = null;
