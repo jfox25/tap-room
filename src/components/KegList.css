@@ -1,0 +1,9 @@
+.list {
+    background-color: rgb(209, 206, 206);
+    border: 3px solid rgb(25, 184, 190);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}

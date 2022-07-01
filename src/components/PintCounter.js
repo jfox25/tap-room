@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import React from "react";
+import './PintCounter.css'
 
 function PintCounter(props)
 {
     return(
-        <React.Fragment>
-            <p>Remianing Pints : {props.pints}</p>
-            <button onClick = {() => props.whenPintSold(props.id)}>Sell Pint</button> 
-        </React.Fragment>
+        <div className="pint-counter">
+            <h3><span className="accent-color">Remaining Pints :</span> {props.pints}</h3>
+            <button className="sell-button" onClick = {() => props.whenPintSold(props.id)}>Sell a Pint</button> 
+        </div>
     )
  
 }

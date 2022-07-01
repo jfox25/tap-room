@@ -2,6 +2,7 @@ import React from 'react';
 import AddKeg from './AddKeg';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+import './KegControl.css'
 
 class KegControl extends React.Component {
 
@@ -61,12 +62,12 @@ class KegControl extends React.Component {
         buttonText = "Return to Keg List";
     } else {
         currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection = {this.handleChangingSelectedKeg} onPintSale = {this.handleSellingPint} />
-        buttonText = "Add Keg";
+        buttonText = "Add a Keg";
     }
     return (
       <React.Fragment>
+        <button className='button' onClick={this.handleClick}>{buttonText}</button> 
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }

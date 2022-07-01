@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Keg from "./Keg";
+import './KegList.css'
 
 function KegList(props)
 {
    
     return (
-        <React.Fragment>
-          <hr/>
+        <div className="list">
           {props.kegList.map((keg) =>
             <Keg
               whenKegClicked = { props.onKegSelection }
@@ -20,7 +20,7 @@ function KegList(props)
               id={keg.id}
               key={keg.id}/>
           )}
-        </React.Fragment>
+        </div>
       );
 }
 

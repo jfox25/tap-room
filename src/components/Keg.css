@@ -1,0 +1,23 @@
+.keg {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+}
+.keg-name {
+    color: rgb(25, 184, 190);
+    text-decoration: underline;
+}
+.keg-clickable :hover {
+    cursor: pointer;
+}
+.keg-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 70%;
+    margin: auto;
+}

@@ -1,0 +1,21 @@
+.pint-counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60%;
+    margin: auto;
+}
+.sell-button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+.sell-button:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
