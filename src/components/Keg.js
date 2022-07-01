@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import PintCounter from "./PintCounter";
 
 function Keg(props)
 {
@@ -11,8 +12,9 @@ function Keg(props)
                 <h3>Alcohol Content : {props.alcoholContent}%</h3>
                 <h4>Price per Pint : ${Math.ceil(props.price/ 120 * 100) / 100}</h4>
                 <h4>Price per Keg : ${props.price}</h4>
-                <hr/>
             </div>
+            <PintCounter whenPintSold = {props.onPintSale} id = {props.id} pints = {props.pints} />
+            <hr/>
         </React.Fragment>
       );
 }
@@ -23,7 +25,8 @@ Keg.propTypes = {
     price: PropTypes.number,
     alcoholContent: PropTypes.number,
     id: PropTypes.string, 
-    whenKegClicked: PropTypes.func 
+    whenKegClicked: PropTypes.func,
+    onPintSale : PropTypes.func
   };
 
 export default Keg;

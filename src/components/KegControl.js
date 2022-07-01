@@ -27,6 +27,7 @@ class KegControl extends React.Component {
       }
   }
   handleAddingNewKegsToList = (newKeg) => {
+    newKeg.pints = 120;
     const newMainKegList = this.state.mainKegList.concat(newKeg);
     this.setState({mainKegList: newMainKegList,
                   formVisable: false });
@@ -34,6 +35,20 @@ class KegControl extends React.Component {
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
     this.setState({selectedKeg: selectedKeg});
+  }
+  handleSellingPint= (id) => {
+    let selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+
+    if(selectedKeg.pints === 0){
+        alert("Keg is sold out!")
+    }else 
+    {
+        selectedKeg.pints--;
+    }
+    const editedMainKegList = this.state.mainKegList
+    .filter(keg => keg.id !== id)
+    .concat(selectedKeg);
+    this.setState({mainKegList: editedMainKegList});
   }
   render(){
     let currentlyVisibleState = null;
@@ -45,7 +60,7 @@ class KegControl extends React.Component {
         currentlyVisibleState = <AddKeg onNewKegCreation={this.handleAddingNewKegsToList}/>
         buttonText = "Return to Keg List";
     } else {
-        currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection = {this.handleChangingSelectedKeg} />
+        currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection = {this.handleChangingSelectedKeg} onPintSale = {this.handleSellingPint} />
         buttonText = "Add Keg";
     }
     return (
