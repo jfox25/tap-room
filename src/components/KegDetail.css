@@ -1,0 +1,11 @@
+.keg-detail-window {
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    border: 3px solid rgb(25, 184, 190);
+    border-radius: 10px;  
+}
+.keg-detail-title {
+    color: rgb(25, 184, 190);
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 } from 'uuid';
 import PropTypes from "prop-types";
+import './AddKeg.css'
 
 function AddKeg(props)
 {
@@ -13,8 +14,9 @@ function AddKeg(props)
             id: v4()});
       }
     return (
-        <React.Fragment>
-            <form onSubmit={handleNewKegFormSubmission}>
+        <div className="keg-form-window">
+            <h1 className="form-title">Add a Keg</h1>
+            <form className="keg-form" onSubmit={handleNewKegFormSubmission}>
             <input
                 type='text'
                 name='name'
@@ -31,9 +33,9 @@ function AddKeg(props)
                 type='number'
                 name='price'
                 placeholder='Price' />
-            <button type='submit'>Add</button>
+            <button type='submit'>Add Keg</button>
             </form>
-        </React.Fragment>
+        </div>
     )
 }
 AddKeg.propTypes = {

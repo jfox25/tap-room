@@ -8,6 +8,7 @@
 }
 .keg-name {
     color: rgb(25, 184, 190);
+    font-size: 30px;
     text-decoration: underline;
 }
 .keg-clickable :hover {
